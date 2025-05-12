@@ -5,31 +5,119 @@
 }
 
 :root{
-    --Purple-50: hsl(260, 100%, 95%)
-    --Purple 300: hsl(264, 82%, 80%)
-    --Purple 500: hsl(263, 55%, 52%)
-    --White: hsl(0, 0%, 100%)
-    --Grey 100: hsl(214, 17%, 92%)
-    --Grey 200: hsl(0, 0%, 81%)
-    --Grey 400: hsl(224, 10%, 45%)
-    --Grey 500: hsl(217, 19%, 35%)
-    --Dark blue: hsl(219, 29%, 14%)
-    --Black: hsl(0, 0%, 7%)
+  --Purple-50: hsl(260, 100%, 95%);
+  --Purple-300: hsl(264, 82%, 80%);
+  --Purple-500: hsl(263, 55%, 52%);
+  --White: hsl(0, 0%, 100%);
+  --Grey-100: hsl(214, 17%, 92%);
+  --Grey-200: hsl(0, 0%, 81%);
+  --Grey-400: hsl(224, 10%, 45%);
+  --Grey-500: hsl(217, 19%, 35%);
+  --Dark-blue: hsl(219, 29%, 14%);
+  --Black: hsl(0, 0%, 7%);
 }
 
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  text-align: left;
+  font-size: 13px;
+}
+
+.container{
+  height: 90vh;
+  width: 70vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.card {
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 20px 50px 70px rgba(167, 165, 165, 0.83);
+}
+
+.container > :nth-child(1){
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  background-color: var(--Purple-500);
+  color: var(--Grey-100);
+  background-image: url('/bg-pattern-quotation.svg');
+  background-repeat: no-repeat;
+  background-size: 120px;
+  background-position: 85% 0;
+
+  & img {
+    border-color: var(--Purple-300);
+  }
+}
+
+.container > :nth-child(2){
+  grid-column: 3;
+  grid-row: 1;
+  background-color: var(--Grey-500);
+  color: var(--Grey-100);
+  
+  & img {
+    border-color: var(--White);
+  }
+}
+
+.container > :nth-child(3){
+  grid-column: 4;
+  grid-row: 1 / span 2;
+  background-color: var(--White);
+  color: var(--Grey-500);
+  
+  & img {
+    border-color: var(--White);
+  }
+}
+
+.container > :nth-child(4){
+  grid-column: 1;
+  grid-row: 2;
+  background-color: var(--White);
+  color: var(--Grey-500);
+  
+  & img {
+    border-color: var(--White);
+  }
+}
+
+.container > :nth-child(5){
+  grid-column: 2 / span 2;
+  grid-row: 2;
+  background-color: var(--Dark-blue);
+  color: var(--Grey-200);
+  
+  & img {
+    border-color: var(--Purple-500);
+  }
 }
 
 header {
   display: flex;
-  border: 1px solid;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .profile-img{
   border-radius: 50%;
   border: 3px solid;
+  margin-right: 1rem;
+  width: 40px;
+}
+
+header span {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+h3 {
+  font-size: 19px;
+  margin-bottom: 1rem;
 }
